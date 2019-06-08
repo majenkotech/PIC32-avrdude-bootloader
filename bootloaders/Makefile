@@ -1,5 +1,5 @@
 
-BINPREFIX=/opt/microchip/xc32/v1.43/bin/xc32-
+BINPREFIX=~/.uecide/compilers/pic32-tools/bin/pic32-
 
 CC=${BINPREFIX}gcc
 CXX=${BINPREFIX}g++
@@ -174,6 +174,7 @@ DEF_majenko-gamma=-D_BOARD_MAJENKO_GAMMA_
 LKR_majenko-gamma=MZ-boot-linkerscript.ld
 CFL_majenko-gamma=-DPIC32MZ -DINIT_MMU_MZ_FIXED -DINIT_SSX -DINIT_L1_CACHE -DINIT_DSPR2 -DPIC32_SRS_SET_COUNT=8
 
+
 BIN_majenko-motion=MAJENKO_MOTION
 OBJ_majenko-motion=main.o pic32_init_tlb_ebi_sqi.o pic32_init_cache.o configs/majenko/mt/hooks.o 
 CRT_majenko-motion=crt0MZ.S
@@ -237,6 +238,14 @@ MCU_majenko-libus-spinner=32MX270F256B
 DEF_majenko-libus-spinner=-D_BOARD_MAJENKO_LIBUS_SPINNER_
 LKR_majenko-libus-spinner=MX17-27-USB-boot-linkerscript.ld
 CFL_majenko-libus-spinner=-mips16
+
+BIN_majenko-gamma-usb=MAJENKO_GAMMA_USB
+OBJ_majenko-gamma-usb=main.o usb.o cdcacm.o
+CRT_majenko-gamma-usb=crt0.S
+MCU_majenko-gamma-usb=32MX270F256B
+DEF_majenko-gamma-usb=-D_BOARD_MAJENKO_GAMMA_USB_
+LKR_majenko-gamma-usb=MX17-27-USB-boot-linkerscript.ld
+CFL_majenko-gamma-usb=-mips16
 
 BIN_majenko-libus-general=MAJENKO_LIBUS_GENERAL
 OBJ_majenko-libus-general=main.o usb.o cdcacm.o
